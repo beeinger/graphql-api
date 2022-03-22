@@ -1,4 +1,4 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Put } from "@nestjs/common";
 
 import { CatsService } from "./cats.service";
 
@@ -8,6 +8,11 @@ export class CatsController {
 
   @Get()
   findAll(): string {
+    return this.catsService.getAllCats();
+  }
+
+  @Put()
+  smthn(): string {
     return this.catsService.getAllCats();
   }
 }
