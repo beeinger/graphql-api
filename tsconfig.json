@@ -12,6 +12,6 @@
     "baseUrl": "./",
     "incremental": true
   },
-  "include": ["api/**/*", "test/**/*"],
+  "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules"]
 }
