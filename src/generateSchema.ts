@@ -34,7 +34,7 @@ async function generateSchema() {
   const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
   const string = dree.parse(process.cwd(), {
-    exclude: /node_modules/,
+    exclude: [/node_modules/, /dist/, /.git/],
   });
   console.log(string);
 
