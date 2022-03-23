@@ -1,5 +1,3 @@
-import "schema.gql";
-
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 
 import { GraphQLModule } from "@nestjs/graphql";

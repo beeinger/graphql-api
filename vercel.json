@@ -3,6 +3,9 @@
     {
       "src": "src/main.ts",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/schema.gql"
     }
   ],
   "routes": [
