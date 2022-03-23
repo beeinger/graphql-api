@@ -6,7 +6,7 @@ import { ValidationPipe } from "@nestjs/common";
 
 export default async function bootstrap() {
   const string = dree.parse(process.cwd(), {
-    exclude: /node_modules/,
+    exclude: [/node_modules/, /recipes/, /common/],
   });
   console.log(string);
 
