@@ -9,7 +9,6 @@
     "prebuild": "rimraf dist && yarn gen:schema",
     "gen:schema": "ts-node src/generateSchema.ts",
     "build": "nest build",
-    "vercel-build": "yarn build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
