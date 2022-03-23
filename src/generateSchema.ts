@@ -38,7 +38,7 @@ async function generateSchema() {
   });
   console.log(string);
 
-  writeFile(process.cwd() + `/public/schema.gql`, schemaPrint, (err) =>
+  writeFile(process.cwd() + `/src/schema.gql`, schemaPrint, (err) =>
     err
       ? console.error("Error writing schema to file", err)
       : console.log("\nGenerated graphql schema.")
