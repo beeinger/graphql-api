@@ -1,14 +1,12 @@
+import * as dree from "dree";
+
 import { AppModule } from "./app.module";
 import { NestFactory } from "@nestjs/core";
 import { ValidationPipe } from "@nestjs/common";
-import { readdir } from "fs";
 
 async function bootstrap() {
-  readdir(process.cwd(), (err, files) => {
-    files.forEach((file) => {
-      console.log(file);
-    });
-  });
+  const string = dree.parse(process.cwd());
+  console.log(string);
 
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());

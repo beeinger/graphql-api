@@ -1,14 +1,16 @@
+import * as dree from "dree";
+
 import { DirectiveLocation, GraphQLDirective, printSchema } from "graphql";
 import {
   GraphQLSchemaBuilderModule,
   GraphQLSchemaFactory,
 } from "@nestjs/graphql";
-import { readdir, writeFile } from "fs";
 
 import { DateScalar } from "./common/scalars/date.scalar";
 import { NestFactory } from "@nestjs/core";
 import { RecipesResolver } from "./recipes/recipes.resolver";
 import { upperDirectiveTransformer } from "./common/directives/upper-case.directive";
+import { writeFile } from "fs";
 
 async function generateSchema() {
   const app = await NestFactory.create(GraphQLSchemaBuilderModule);
@@ -31,11 +33,8 @@ async function generateSchema() {
 
   const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
-  readdir(process.cwd(), (err, files) => {
-    files.forEach((file) => {
-      console.log(file);
-    });
-  });
+  const string = dree.parse(process.cwd());
+  console.log(string);
 
   writeFile(process.cwd() + `/schema.gql`, schemaPrint, (err) =>
     err
