@@ -4,7 +4,7 @@ import { AppModule } from "./app.module";
 import { NestFactory } from "@nestjs/core";
 import { ValidationPipe } from "@nestjs/common";
 
-async function bootstrap() {
+export default async function bootstrap() {
   const string = dree.parse(process.cwd(), {
     exclude: /node_modules/,
   });

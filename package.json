@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "husky install && yarn schema",
-    "prebuild": "rimraf dist && yarn schema",
+    "prebuild": "yarn schema",
     "schema": "ts-node src/generateSchema.ts",
-    "build": "nest build",
+    "build": "rimraf dist && nest build",
+    "vercel-build": "yarn build --ignore-scripts",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

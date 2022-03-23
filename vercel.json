@@ -1,19 +1,13 @@
 {
-  "builds": [
-    {
-      "src": "src/main.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "functions": {
-    "src/main.ts": {
+    "api/index.js": {
       "includeFiles": "src/schema.gql"
     }
   },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/main.ts"
+      "dest": "api/index.js"
     }
   ]
 }
