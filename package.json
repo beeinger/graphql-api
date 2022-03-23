@@ -6,6 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "vercel": "yarn install --ignore-scripts",
     "postinstall": "husky install",
     "prebuild": "rimraf dist && yarn schema",
     "schema": "ts-node src/generateSchema.ts",
