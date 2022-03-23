@@ -1,8 +1,14 @@
 {
+  "functions": {
+    "src/main": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/main"
+      "dest": "dist/main"
     }
   ]
 }
