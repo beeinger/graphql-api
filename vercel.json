@@ -10,11 +10,5 @@
       "src": "/(.*)",
       "dest": "src/main.ts"
     }
-  ],
-  "files": [
-    {
-      "input": "schema.gql",
-      "output": "schema.gql"
-    }
   ]
 }
