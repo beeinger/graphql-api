@@ -40,6 +40,7 @@ async function generateSchema() {
       driver: ApolloDriver,
       installSubscriptionHandlers: true,
       autoSchemaFile: false,
+      playground: true,
       transformSchema: async () => {
         const schema = await generateSchema();
         return upperDirectiveTransformer(schema, "upper");
