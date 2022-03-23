@@ -14,7 +14,7 @@ import { upperDirectiveTransformer } from "./common/directives/upper-case.direct
       autoSchemaFile: false,
       playground: true,
       introspection: true,
-      typePaths: [process.cwd() + `/src/schema.gql`],
+      typePaths: [process.cwd() + `/schema.gql`],
       transformSchema: async (schema) =>
         upperDirectiveTransformer(schema, "upper"),
     }),
