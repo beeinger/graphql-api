@@ -8,7 +8,7 @@
   "scripts": {
     "postinstall": "yarn schema",
     "prebuild": "yarn schema",
-    "schema": "ts-node src/generateSchema.ts",
+    "schema": "ts-node api/generateSchema.ts",
     "build": "rimraf dist && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
