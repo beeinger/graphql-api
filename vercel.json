@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/index.js": {
-      "includeFiles": "src/schema.gql"
+    "api/main.ts": {
+      "includeFiles": "api/schema.gql"
     }
   },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.js"
+      "dest": "api/main.ts"
     }
   ]
 }
