@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/main.ts": {
-      "includeFiles": "_files/**"
+      "includeFiles": "public/**"
     }
   },
   "routes": [
