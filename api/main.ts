@@ -1,6 +1,6 @@
 import * as dree from "dree";
 
-import { AppModule } from "./app.module";
+import { AppModule } from "../src/app.module";
 import { NestFactory } from "@nestjs/core";
 import { ValidationPipe } from "@nestjs/common";
 
