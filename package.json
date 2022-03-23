@@ -8,8 +8,9 @@
   "scripts": {
     "postinstall": "yarn schema",
     "prebuild": "yarn schema",
-    "schema": "ts-node api/generateSchema.ts",
+    "schema": "ts-node src/generateSchema.ts",
     "build": "rimraf dist && nest build",
+    "vercel-build": "echo 'build'",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
