@@ -5,6 +5,11 @@
       "use": "@vercel/node"
     }
   ],
+  "functions": {
+    "src/main.ts": {
+      "includeFiles": "src/schema.gql"
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
