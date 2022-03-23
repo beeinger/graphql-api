@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/main.ts": {
-      "includeFiles": "**/*.gql"
+      "includeFiles": "_files/**"
     }
   },
   "routes": [
