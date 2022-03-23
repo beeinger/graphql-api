@@ -4,7 +4,7 @@ import { ValidationPipe } from "@nestjs/common";
 import { readdir } from "fs";
 
 async function bootstrap() {
-  readdir("", (err, files) => {
+  readdir(process.cwd(), (err, files) => {
     files.forEach((file) => {
       console.log(file);
     });

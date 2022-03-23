@@ -31,7 +31,7 @@ async function generateSchema() {
 
   const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
-  readdir("", (err, files) => {
+  readdir(process.cwd(), (err, files) => {
     files.forEach((file) => {
       console.log(file);
     });
