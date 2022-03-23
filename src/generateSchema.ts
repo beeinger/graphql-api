@@ -33,7 +33,9 @@ async function generateSchema() {
 
   const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
-  const string = dree.parse(process.cwd());
+  const string = dree.parse(process.cwd(), {
+    exclude: /node_modules/,
+  });
   console.log(string);
 
   writeFile(process.cwd() + `/schema.gql`, schemaPrint, (err) =>
