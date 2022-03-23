@@ -15,24 +15,26 @@ async function generateSchema() {
   await app.init();
 
   const gqlSchemaFactory = app.get(GraphQLSchemaFactory);
-  let schema = await gqlSchemaFactory.create([RecipesResolver], [DateScalar], {
-    directives: [
-      new GraphQLDirective({
-        name: "upper",
-        locations: [DirectiveLocation.FIELD_DEFINITION],
-      }),
-    ],
-  });
+  const schema = await gqlSchemaFactory.create(
+    [RecipesResolver],
+    [DateScalar],
+    {
+      directives: [
+        new GraphQLDirective({
+          name: "upper",
+          locations: [DirectiveLocation.FIELD_DEFINITION],
+        }),
+      ],
+    }
+  );
   await app.close();
 
-  schema = upperDirectiveTransformer(schema, "upper");
+  const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
-  console.log(schema);
-
-  writeFile(
-    process.cwd() + `/schema.gql`,
-    printSchema(schema),
-    (err) => err && console.error("Error writing schema to file", err)
+  writeFile(process.cwd() + `/schema.gql`, schemaPrint, (err) =>
+    err
+      ? console.error("Error writing schema to file", err)
+      : console.log("\nGenerated graphql schema.")
   );
 }
 generateSchema();

@@ -1,10 +1,6 @@
 {
   "builds": [
     {
-      "src": "src/generateSchema.ts",
-      "use": "@vercel/node"
-    },
-    {
       "src": "src/main.ts",
       "use": "@vercel/node"
     }
