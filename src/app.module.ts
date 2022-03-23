@@ -1,12 +1,28 @@
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { CatsController } from "./cats.controller";
-import { CatsService } from "./cats.service";
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
+import { DirectiveLocation, GraphQLDirective } from "graphql";
+
+import { GraphQLModule } from "@nestjs/graphql";
 import { Module } from "@nestjs/common";
+import { RecipesModule } from "./recipes/recipes.module";
+import { upperDirectiveTransformer } from "./common/directives/upper-case.directive";
 
 @Module({
-  imports: [],
-  controllers: [AppController, CatsController],
-  providers: [AppService, CatsService],
+  imports: [
+    RecipesModule,
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: "schema.gql",
+      transformSchema: (schema) => upperDirectiveTransformer(schema, "upper"),
+      installSubscriptionHandlers: true,
+      buildSchemaOptions: {
+        directives: [
+          new GraphQLDirective({
+            name: "upper",
+            locations: [DirectiveLocation.FIELD_DEFINITION],
+          }),
+        ],
+      },
+    }),
+  ],
 })
 export class AppModule {}
