@@ -26,6 +26,7 @@ export class RecipesResolver {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Query((returns) => [Recipe])
   recipes(@Args() recipesArgs: RecipesArgs): Promise<Recipe[]> {
+    console.log("aaaa");
     return this.recipesService.findAll(recipesArgs);
   }
 

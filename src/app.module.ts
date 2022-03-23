@@ -30,7 +30,9 @@ async function generateSchema() {
       ],
     }
   );
-  return schema;
+
+  app.close();
+  return upperDirectiveTransformer(schema, "upper");
 }
 
 @Module({
@@ -39,12 +41,13 @@ async function generateSchema() {
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       installSubscriptionHandlers: true,
+      // autoSchemaFile: "schema.gql",
       autoSchemaFile: false,
       playground: true,
-      transformSchema: async () => {
-        const schema = await generateSchema();
-        return upperDirectiveTransformer(schema, "upper");
-      },
+      introspection: true,
+      typePaths: ["**/*.gql"],
+      transformSchema: async (schema) =>
+        upperDirectiveTransformer(schema, "upper"),
     }),
   ],
 })
