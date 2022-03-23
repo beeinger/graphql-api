@@ -31,7 +31,7 @@ async function generateSchema() {
 
   const schemaPrint = printSchema(upperDirectiveTransformer(schema, "upper"));
 
-  console.log(process.cwd);
+  console.log(process.cwd());
 
   writeFile(process.cwd() + `/schema.gql`, schemaPrint, (err) =>
     err
