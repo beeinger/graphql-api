@@ -10,6 +10,7 @@
     "prebuild": "yarn schema",
     "schema": "ts-node src/generateSchema.ts",
     "build": "rimraf dist && nest build",
+    "vercel-install": "yarn install --ignore-scripts",
     "vercel-build": "yarn build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
