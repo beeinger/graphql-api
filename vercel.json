@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/main.ts": {
-      "includeFiles": "src/schema.gql"
+      "includeFiles": "_files/schema.gql"
     }
   },
   "routes": [
