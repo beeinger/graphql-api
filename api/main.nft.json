@@ -2,7 +2,7 @@
   "version": 1,
   "files": [
     {
-      "input": "../../../schema.gql",
+      "input": "../src/schema.gql",
       "output": "schemas/schema.gql"
     }
   ]
