@@ -10,7 +10,7 @@
     "prebuild": "yarn schema",
     "schema": "ts-node src/generateSchema.ts",
     "build": "rimraf dist && nest build",
-    "vercel-build": "echo 'build' && mkdir .output && mkdir .output/static && cp src/schema.gql .output/static/schema.gql",
+    "vercel-build": "echo 'build'",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
