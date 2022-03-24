@@ -12,8 +12,6 @@ export default async function bootstrap() {
   });
   console.log(string);
 
-  const file = readFileSync(join(__dirname, "src", "schema.gql"), "utf8");
-
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
 

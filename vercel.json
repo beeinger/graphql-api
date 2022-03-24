@@ -1,13 +1,7 @@
 {
   "functions": {
     "api/main.ts": {
-      "includeFiles": "public/**"
+      "includeFiles": "src/schema.gql"
     }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/main.ts"
-    }
-  ]
+  }
 }
