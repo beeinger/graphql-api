@@ -3,5 +3,11 @@
     "api/main.ts": {
       "includeFiles": "src/schema.gql"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/main.ts"
+    }
+  ]
 }
