@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "input": "../../../schema.gql",
+      "output": "schemas/schema.gql"
+    }
+  ]
+}
